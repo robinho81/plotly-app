@@ -1,0 +1,29 @@
+<div class="main-app-container">
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="onToggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My Application</span>
+  </mat-toolbar>
+  <mat-sidenav-container class="side-navigation-bar">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+      <mat-nav-list>
+        <a routerLink="/dashboard" mat-list-item (click)="triggerCloseMenu()">
+          <mat-icon mat-list-icon>dashboard</mat-icon>
+          <span>Dashboard</span>
+        </a>
+        <a routerLink="/home" mat-list-item (click)="triggerCloseMenu()">
+          <mat-icon mat-list-icon>description</mat-icon>
+          <span>Home</span>
+        </a>
+        <a routerLink="/plot" mat-list-item (click)="triggerCloseMenu()">
+          <mat-icon mat-list-icon>description</mat-icon>
+          <span>Plot</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content style="flex: 1">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
